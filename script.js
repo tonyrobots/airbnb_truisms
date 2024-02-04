@@ -17,6 +17,6 @@ function fetchMessage() {
 }
 
 function displayAphorism(aphorism) {
-  const displayElement = document.getElementById("message");
-  displayElement.innerText = aphorism;
+  const scrollingTextElement = document.getElementById("scrolling-text");
+  scrollingTextElement.innerText = aphorism;
 }

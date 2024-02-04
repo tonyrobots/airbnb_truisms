@@ -11,11 +11,31 @@ body {
   font-family: "LED Dot-Matrix", sans-serif;
   font-size: 66px;
   color: red;
-  white-space: pre-wrap;
+  /* white-space: pre-wrap; */
   word-wrap: break-word;
   text-align: center;
   padding: 20px;
   border: 2px solid red;
   background-color: black;
   margin: 50px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.led-display {
+  /* Existing styles */
+  overflow: hidden; /* Ensure the content outside the box is not visible */
+  white-space: nowrap; /* Keep the text in a single line */
+}
+
+.scrolling-text {
+  display: inline-block;
+  animation: scroll 10s linear infinite; /* Adjust the duration (10s) as needed */
 }
