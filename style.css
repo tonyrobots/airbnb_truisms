@@ -1,0 +1,21 @@
+body {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.led-display {
+  font-family: "LED Dot-Matrix", sans-serif;
+  font-size: 66px;
+  color: red;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: center;
+  padding: 20px;
+  border: 2px solid red;
+  background-color: black;
+  margin: 50px;
+}
