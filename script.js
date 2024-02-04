@@ -1,7 +1,14 @@
 let truisms = [];
 const messageCount = 10;
-// const messageURL = `http://localhost:3000/truisms/airbnb/${messageCount}`;
-const messageURL = `https://aiphorisms-2f3775e1ef4b.herokuapp.com/truisms/airbnb/${messageCount}`;
+
+let messageURL;
+
+// todo handle this better? env vars or config file?
+if (window.location.hostname === "localhost") {
+  messageURL = `http://localhost:3000/truisms/airbnb/${messageCount}`;
+} else {
+  messageURL = `https://aiphorisms-2f3775e1ef4b.herokuapp.com/truisms/airbnb/${messageCount}`;
+}
 
 document.addEventListener("DOMContentLoaded", function () {
   fetchMessages(10); //initial fetch
