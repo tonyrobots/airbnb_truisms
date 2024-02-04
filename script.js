@@ -11,7 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-const messageURL = "http://localhost:3000/airbnb/";
+// const messageURL = "http://localhost:3000/airbnb/";
+const messageURL = "https://aiphorisms-2f3775e1ef4b.herokuapp.com/airbnb";
 
 document.addEventListener("DOMContentLoaded", function () {
   fetchAphorism(); // Initial fetch
