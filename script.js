@@ -1,40 +1,47 @@
-const reload = false;
+let truisms = [];
+const messageCount = 10;
+const messageURL = `http://localhost:3000/truisms/airbnb/${messageCount}`;
+// const MessageURL = "https://aiphorisms-2f3775e1ef4b.herokuapp.com/";
 
 document.addEventListener("DOMContentLoaded", function () {
-  fetchMessage(); //initial fetch
+  fetchMessages(10); //initial fetch
   const scrollingTextElement = document.getElementById("scrolling-text");
+
   // Listen for the end of each animation iteration
-  if (reload) {
-    scrollingTextElement.addEventListener("animationiteration", () => {
-      fetchMessage(); // Fetch a new aphorism after each scroll
-    });
-  }
+  scrollingTextElement.addEventListener("animationiteration", () => {
+    displayNextMessage();
+  });
 });
 
-// const messageURL = "http://localhost:3000/airbnb/";
-const messageURL = "https://aiphorisms-2f3775e1ef4b.herokuapp.com/airbnb";
-
-function fetchMessage() {
+function fetchMessages(number = 1) {
+  console.log(`fetching ${number} messages`);
   fetch(messageURL)
     .then((response) => response.json())
     .then((data) => {
-      displayAphorism(data.truism);
+      // Assuming the server responds with an array of aphorisms in data.truisms
+      // Loop through the array and handle each truism
+      data.truisms.forEach((truism) => {
+        truisms.push(truism);
+        console.log(truism);
+      });
+      // Display the next message after adding all new ones
+      displayNextMessage();
     })
     .catch((error) => {
-      console.error("Error fetching truism:", error);
-      displayAphorism("Error loading truism. Please try again.");
+      console.error("Error fetching truisms:", error);
+      displayMessage("Error loading truisms. Please try again.");
     });
 }
 
-function displayAphorism(aphorism) {
-  const scrollingTextElement = document.getElementById("scrolling-text");
-  scrollingTextElement.innerText = aphorism;
-
-  if (reload) {
-    // Reset the animation to trigger it again for the new text
-    scrollingTextElement.style.animation = "none";
-    setTimeout(() => {
-      scrollingTextElement.style.animation = "";
-    }, 10); // Short delay to ensure the animation resets
+function displayNextMessage() {
+  if (truisms.length > 0) {
+    displayMessage(truisms.shift());
+  } else {
+    fetchMessages();
   }
+}
+
+function displayMessage(text) {
+  const scrollingTextElement = document.getElementById("scrolling-text");
+  scrollingTextElement.innerText = text;
 }

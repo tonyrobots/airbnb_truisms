@@ -9,7 +9,7 @@ body {
 
 .led-display {
   font-family: "LED Dot-Matrix", sans-serif;
-  font-size: 72px;
+  font-size: 102px;
   color: red;
   /* white-space: pre-wrap; */
   word-wrap: break-word;
@@ -37,5 +37,5 @@ body {
 
 .scrolling-text {
   display: inline-block;
-  animation: scroll 10s linear infinite; /* Adjust the duration (10s) as needed */
+  animation: scroll 16s linear infinite; /* Adjust the duration  as needed */
 }
