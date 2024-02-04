@@ -14,11 +14,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function fetchMessages(number = 1) {
-  console.log(`fetching ${number} messages`);
+  console.log(`fetching ${number} messages from ${messageURL}`);
   fetch(messageURL)
     .then((response) => response.json())
     .then((data) => {
-      // Assuming the server responds with an array of aphorisms in data.truisms
+      // Assuming the server responds with an array of truisms in data.truisms
       // Loop through the array and handle each truism
       data.truisms.forEach((truism) => {
         truisms.push(truism);
