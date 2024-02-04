@@ -9,13 +9,13 @@ body {
 
 .led-display {
   font-family: "LED Dot-Matrix", sans-serif;
-  font-size: 66px;
+  font-size: 72px;
   color: red;
   /* white-space: pre-wrap; */
   word-wrap: break-word;
   text-align: center;
-  padding: 20px;
-  border: 2px solid red;
+  padding: 10px;
+  /* border: 2px solid red; */
   background-color: black;
   margin: 50px;
 }
