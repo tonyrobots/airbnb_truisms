@@ -5,9 +5,9 @@ let messageURL;
 
 // todo handle this better? env vars or config file?
 if (window.location.hostname === "localhost") {
-  messageURL = `http://localhost:3666/truisms/airbnb/${messageCount}`;
+  messageURL = `http://localhost:3666/truisms/airbnb_rev2/${messageCount}`;
 } else {
-  messageURL = `https://aphorisms-nine.vercel.app/truisms/airbnb/${messageCount}`;
+  messageURL = `https://aphorisms-nine.vercel.app/truisms/airbnb_rev2/${messageCount}`;
 }
 
 document.addEventListener("DOMContentLoaded", function () {
