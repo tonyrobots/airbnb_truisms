@@ -5,7 +5,7 @@ let messageURL;
 
 // todo handle this better? env vars or config file?
 if (window.location.hostname === "localhost") {
-  messageURL = `http://localhost:3000/truisms/airbnb/${messageCount}`;
+  messageURL = `http://localhost:3666/truisms/airbnb/${messageCount}`;
 } else {
   messageURL = `https://aiphorisms-2f3775e1ef4b.herokuapp.com/truisms/airbnb/${messageCount}`;
 }
