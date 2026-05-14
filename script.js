@@ -7,7 +7,7 @@ let messageURL;
 if (window.location.hostname === "localhost") {
   messageURL = `http://localhost:3666/truisms/airbnb/${messageCount}`;
 } else {
-  messageURL = `https://aiphorisms-2f3775e1ef4b.herokuapp.com/truisms/airbnb/${messageCount}`;
+  messageURL = `https://aphorisms-nine.vercel.app/truisms/airbnb/${messageCount}`;
 }
 
 document.addEventListener("DOMContentLoaded", function () {
